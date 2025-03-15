@@ -46,7 +46,7 @@ android {
             val appName = "Ai-Helper"
             val suffix = if (buildType == "release") "release" else "debug"
 
-            val newApkName = "${appName}_v${variantName}-${suffix}.apk"
+            val newApkName = "${appName}-${suffix}.apk"
             val outputImpl = output as com.android.build.gradle.internal.api.BaseVariantOutputImpl
             outputImpl.outputFileName = newApkName
         }
