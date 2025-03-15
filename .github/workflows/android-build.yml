@@ -28,13 +28,13 @@ jobs:
         uses: gradle/gradle-build-action@v2
 
       - name: Grant execute permission for Gradlew
-        run: chmod +x gradlew
+        run: ./gradlew assembleDebug
 
       - name: Build Debug APK
         run: ./gradlew 
         
-      - name: List APK Output Path
-        run: ls -R app/build/outputs/
+      - name: List All Build Outputs
+        run: find . -name "*.apk" -o -name "*.aar"
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
